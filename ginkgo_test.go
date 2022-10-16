@@ -14,7 +14,7 @@ import (
 
 var _ = Describe("API Test", func() {
 	It("There should be executors registered", func() {
-		resp, err := http.Get("https://demo.testkube.io/results/v1/executors" + os.Getenv("ENDPOINT"))
+		resp, err := http.Get("https://demo.testkube.io/results/v1/" + os.Getenv("ENDPOINT"))
 		Expect(err).To(BeNil())
 
 		executors, err := GetTestkubeExecutors(resp.Body)
